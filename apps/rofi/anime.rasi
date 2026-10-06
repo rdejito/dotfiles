@@ -1,0 +1,71 @@
+* {
+    background: #0a0a12;
+    background-alt: #151525;
+    foreground: #e6e6ff;
+    selected: #00f5ff;
+    active: #00f5ff;
+    urgent: #ff5577;
+
+    font: "FiraCode Nerd Font Mono 11";
+
+    border-radius: 10px;
+}
+
+window {
+    width: 650px;
+    border: 2px;
+    border-color: #00f5ff;
+    background-color: #0a0a12;
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding: 12px;
+    background-color: #151525;
+    border-radius: 8px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: #00f5ff;
+    padding: 0 10px 0 0;
+}
+
+entry {
+    text-color: #e6e6ff;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 5px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+element normal {
+    background-color: transparent;
+    text-color: #e6e6ff;
+}
+
+element selected {
+    background-color: #00f5ff;
+    text-color: #0a0a12;
+}
+
+element-icon {
+    size: 28px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

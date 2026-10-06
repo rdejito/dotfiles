@@ -1,0 +1,84 @@
+* {
+    background: #0a080a;
+    background-alt: #120b0e;
+
+    dirty-white: #eae7e6;
+    foreground: #f2e8eb;
+    foreground-alt: #8f737b;
+
+    red: #ff1744;
+    red-dark: #3a101b;
+    red-blood: #880808;
+
+    font: "FiraCode Nerd Font Mono 11";
+}
+
+window {
+    width: 600px;
+    background-color: @background;
+    border: 2px;
+    border-color: @red-blood;
+    padding: 20px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 15px;
+    background-color: transparent;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @background-alt;
+    border: 1px;
+    border-color: @red-dark;
+    padding: 12px;
+}
+
+prompt {
+    text-color: @red;
+    background-color: transparent;
+}
+
+entry {
+    text-color: @foreground;
+    background-color: transparent;
+    placeholder: "Search...";
+    placeholder-color: @foreground-alt;
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    spacing: 4px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element { 
+    orientation: horizontal; 
+    padding: 10px; 
+    background-color: transparent; 
+} 
+
+element-icon { 
+    size: 24px; 
+    background-color: transparent; 
+    margin: 0 10px 0 0; 
+} 
+
+element-text { 
+    text-color: @foreground; 
+    background-color: transparent; 
+}
+
+element selected {
+    background-color: @red-blood;
+    border: 1px;
+    border-color: @dirty-white;
+}
+
+element-text selected {
+    text-color: @foreground;
+    background-color: transparent;
+}
