@@ -21,6 +21,10 @@ dotfiles/
 │   ├── picom/
 │   │   └── picom.conf
 │   │
+│   ├── pipewire/
+│   │   └── pipewire-pulse.conf.d/
+│   │       └── 10-switch-on-connect.conf
+│   │
 │   ├── polybar/
 │   │   ├── config.ini
 │   │   ├── launch.sh
@@ -91,6 +95,7 @@ dotfiles/
 * Rofi launcher and custom themes
 * Picom configuration
 * Ghostty terminal configuration
+* Bluetooth audio auto-switching (PipeWire)
 * Custom shell scripts
 * Symlink-based configuration management
 * Designed for multiple window managers
@@ -187,6 +192,10 @@ The installer will create symlinks such as:
 ~/.config/rofi
         ↓
 ~/dotfiles/apps/rofi
+
+~/.config/pipewire/pipewire-pulse.conf.d
+        ↓
+~/dotfiles/apps/pipewire/pipewire-pulse.conf.d
 ```
 
 This means the configuration remains inside the Git repository while applications continue to use their normal paths under `~/.config`.
@@ -323,6 +332,7 @@ You may need to modify the configurations to match your own system.
 * [x] Clickable date/time calendar popup
 * [x] Bluetooth menu (rofi picker)
 * [x] Wi-Fi menu (rofi picker)
+* [x] Bluetooth audio auto-switching (PipeWire)
 * [ ] dwm configuration
 * [ ] Hyprland configuration
 * [ ] AwesomeWM configuration
