@@ -1,0 +1,46 @@
+@theme "~/.config/rofi/cyberpunk-red.rasi"
+
+window {
+    width: 380px;
+    padding: 14px;
+}
+
+mainbox {
+    children: [ message, listview ];
+    spacing: 12px;
+}
+
+message {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+}
+
+textbox {
+    background-color: transparent;
+    horizontal-align: 0.5;
+    text-color: @foreground;
+}
+
+listview {
+    columns: 3;
+    lines: 1;
+    spacing: 4px;
+}
+
+element {
+    padding: 6px 10px;
+}
+
+element selected {
+    background-color: @red-blood;
+    border: 0px;
+}
+
+element-text {
+    text-color: @foreground;
+}
+
+element-text selected {
+    text-color: @foreground;
+}

@@ -25,6 +25,9 @@ dotfiles/
 │   │   ├── config.ini
 │   │   ├── launch.sh
 │   │   └── scripts/
+│   │       ├── bluetooth.sh
+│   │       ├── bluetooth-menu.sh
+│   │       ├── calendar.sh
 │   │       ├── i3-apps.sh
 │   │       ├── network.sh
 │   │       ├── storage.sh
@@ -32,6 +35,7 @@ dotfiles/
 │   │
 │   └── rofi/
 │       ├── anime.rasi
+│       ├── calendar.rasi
 │       ├── config.rasi
 │       └── cyberpunk-red.rasi
 │
@@ -69,10 +73,11 @@ dotfiles/
 * Polybar with:
 
   * Workspace information
-  * Date/time
+  * Date/time (clickable, opens a calendar popup)
   * CPU usage
   * Memory usage
   * Network status
+  * Bluetooth status (click to connect/disconnect)
   * Storage information
   * Package update count
   * Currently running applications
