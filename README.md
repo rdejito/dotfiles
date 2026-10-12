@@ -107,7 +107,7 @@ Several Polybar modules are clickable:
 | Module | Displays | Click action |
 | --- | --- | --- |
 | `network.sh` | Wi-Fi signal, link speed, up/down traffic | `wifi-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
-| `bluetooth.sh` | Adapter state / connected device | `bluetooth-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
+| `bluetooth.sh` | Adapter state / connected device + battery % | `bluetooth-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
 | `date` / `time` | Date and clock | `calendar.sh` — rofi calendar popup |
 | `updates.sh` | Pending APT updates | Terminal `apt update` |
 
