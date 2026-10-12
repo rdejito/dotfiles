@@ -61,6 +61,8 @@ install_i3() {
     echo "Installing i3 configuration..."
 
     link_config "$DOTFILES/wm/i3/config" "$CONFIG/i3/config"
+    link_config "$DOTFILES/wm/i3/scripts" "$CONFIG/i3/scripts"
+    link_config "$DOTFILES/wallpapers" "$CONFIG/wallpapers"
 
     install_shared
 }

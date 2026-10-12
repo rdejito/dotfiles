@@ -37,7 +37,13 @@ dotfiles/
 │
 ├── wm/
 │   └── i3/
-│       └── config
+│       ├── config
+│       └── scripts/
+│           └── monitors.sh
+│
+├── wallpapers/
+│   ├── reze-chainsaw-man
+│   └── reze-head-chopped
 │
 ├── install.sh
 └── README.md
@@ -50,6 +56,7 @@ dotfiles/
 | `wm/`                   | Window-manager-specific configurations |
 | `apps/`                 | Shared application configurations      |
 | `apps/polybar/scripts/` | Custom Polybar modules/scripts         |
+| `wallpapers/`           | Wallpaper assets (linked to `~/.config/wallpapers`) |
 | `install.sh`            | Installation and symlink management    |
 | `README.md`             | Documentation                          |
 
