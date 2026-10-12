@@ -1,6 +1,11 @@
 #!/bin/bash
 
-INTERFACE="wlp2s0"
+# Auto-detect the Wi-Fi interface reported by NetworkManager, falling back
+# to a sane default if detection fails.
+INTERFACE=$(nmcli -t -f DEVICE,TYPE device 2>/dev/null |
+    sed -n 's/^\([^:]*\):wifi$/\1/p' | head -1)
+[ -n "$INTERFACE" ] || INTERFACE="wlan0"
+
 CACHE="/tmp/polybar-network-$INTERFACE"
 
 # Get connection name from NetworkManager

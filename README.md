@@ -25,13 +25,19 @@ dotfiles/
 │   │   ├── config.ini
 │   │   ├── launch.sh
 │   │   └── scripts/
-│   │       ├── bluetooth.sh
+│   │       ├── always-apps.sh
 │   │       ├── bluetooth-menu.sh
+│   │       ├── bluetooth.sh
 │   │       ├── calendar.sh
 │   │       ├── i3-apps.sh
+│   │       ├── music.sh
 │   │       ├── network.sh
 │   │       ├── storage.sh
-│   │       └── updates.sh
+│   │       ├── tiling-indicator.sh
+│   │       ├── toggle-monitor.sh
+│   │       ├── toggle-power.sh
+│   │       ├── updates.sh
+│   │       └── wifi-menu.sh
 │   │
 │   └── rofi/
 │       ├── anime.rasi
@@ -76,8 +82,8 @@ dotfiles/
   * Date/time (clickable, opens a calendar popup)
   * CPU usage
   * Memory usage
-  * Network status
-  * Bluetooth status (click to connect/disconnect)
+  * Network status — click to open a Wi-Fi menu (connect, disconnect, scan, power off)
+  * Bluetooth status — click to open a device menu (connect, disconnect, scan, power off)
   * Storage information
   * Package update count
   * Currently running applications
@@ -88,6 +94,17 @@ dotfiles/
 * Custom shell scripts
 * Symlink-based configuration management
 * Designed for multiple window managers
+
+### Interactive modules
+
+Several Polybar modules are clickable:
+
+| Module | Displays | Click action |
+| --- | --- | --- |
+| `network.sh` | Wi-Fi signal, link speed, up/down traffic | `wifi-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
+| `bluetooth.sh` | Adapter state / connected device | `bluetooth-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
+| `date` / `time` | Date and clock | `calendar.sh` — rofi calendar popup |
+| `updates.sh` | Pending APT updates | Terminal `apt update` |
 
 ---
 
@@ -103,6 +120,18 @@ This repository assumes a Linux environment with:
 * The applications required by the configuration you want to use
 
 The configuration is primarily developed and tested on **Linux Mint**.
+
+### Dependencies
+
+The key tools used across the configuration:
+
+* **i3** window manager, plus `dex`, `feh`, `picom`
+* **Polybar** with a monospace **Nerd Font** (e.g. `FiraCode Nerd Font`)
+* **Rofi** — launcher, Wi-Fi/Bluetooth menus, calendar popup
+* **NetworkManager** (`nmcli`) and **BlueZ** (`bluetoothctl`), plus `rfkill`
+* **PipeWire** — Bluetooth audio auto-switching
+* **Ghostty** (terminal) and **playerctl** (music module)
+* Extras referenced in the i3 config: `flameshot`, `htop`, `nm-applet`
 
 ---
 
@@ -291,6 +320,9 @@ You may need to modify the configurations to match your own system.
 * [x] Ghostty configuration
 * [x] Symlink-based installation
 * [x] Backup existing configurations
+* [x] Clickable date/time calendar popup
+* [x] Bluetooth menu (rofi picker)
+* [x] Wi-Fi menu (rofi picker)
 * [ ] dwm configuration
 * [ ] Hyprland configuration
 * [ ] AwesomeWM configuration
