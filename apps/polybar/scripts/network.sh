@@ -88,7 +88,6 @@ else
 fi
 
 # Shorten SSID
-# Shorten SSID to 4 characters + ellipsis
 if [ ${#SSID} -gt 4 ]; then
     SSID="${SSID:0:4}…"
 fi

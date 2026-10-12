@@ -1,0 +1,7 @@
+# Editor settings (may contain API keys)
+.vscode/
+
+# Local config backups
+*.bak
+*.backup*
+*.before-simplify
