@@ -91,7 +91,7 @@ dotfiles/
   * Storage information
   * Package update count
   * Currently running applications
-  * Volume status
+  * Volume status (right-click to switch output device)
 * Rofi launcher and custom themes
 * Picom configuration
 * Ghostty terminal configuration
@@ -109,6 +109,7 @@ Several Polybar modules are clickable:
 | `network.sh` | Wi-Fi signal, link speed, up/down traffic | `wifi-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
 | `bluetooth.sh` | Adapter state / connected device + battery % | `bluetooth-menu.sh` — rofi picker (connect, disconnect, scan, power off) |
 | `date` / `time` | Date and clock | `calendar.sh` — rofi calendar popup |
+| `pulseaudio` | Volume level/mute | Right-click: `select-audio-sink.sh` — rofi speaker/output selector |
 | `updates.sh` | Pending APT updates | Terminal `apt update` |
 
 ---
