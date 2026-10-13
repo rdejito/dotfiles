@@ -50,6 +50,7 @@ install_shared() {
     echo
     echo "Installing shared applications..."
 
+    link_config "$DOTFILES/apps/nvim" "$CONFIG/nvim"
     link_config "$DOTFILES/apps/polybar" "$CONFIG/polybar"
     link_config "$DOTFILES/apps/rofi" "$CONFIG/rofi"
     link_config "$DOTFILES/apps/picom/picom.conf" "$CONFIG/picom/picom.conf"
