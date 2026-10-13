@@ -10,6 +10,14 @@ return {
     opts = {
       servers = {
         bashls = {},
+        -- kotlin-language-server crashes on initialize when no Gradle project
+        -- root is detected (fwcd/kotlin-language-server#648). Give it an
+        -- absolute storage path like nvim-lspconfig#3239 suggests.
+        kotlin_language_server = {
+          init_options = {
+            storagePath = vim.fn.stdpath("cache") .. "/kotlin-language-server",
+          },
+        },
       },
     },
   },
