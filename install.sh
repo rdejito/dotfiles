@@ -20,16 +20,31 @@ usage() {
 backup() {
     local target="$1"
 
-    if [ -e "$target" ] || [ -L "$target" ]; then
-        local backup="${target}.backup"
+    [ -e "$target" ] || [ -L "$target" ] || return 0
 
-        if [ -e "$backup" ] || [ -L "$backup" ]; then
-            backup="${target}.backup.$(date +%Y%m%d-%H%M%S)"
-        fi
-
-        echo "Backing up: $target"
-        mv "$target" "$backup"
+    # If the target is already one of our own dotfiles symlinks, there is no
+    # user data to preserve -- just drop it. (Prevents re-runs from turning
+    # .backup files into symlinks to the newly-installed config.)
+    if [ -L "$target" ]; then
+        local existing
+        existing="$(readlink "$target")"
+        case "$existing" in
+            "$DOTFILES"/*)
+                echo "Removing existing dotfiles symlink: $target"
+                rm -f "$target"
+                return 0
+                ;;
+        esac
     fi
+
+    local backup="${target}.backup"
+
+    if [ -e "$backup" ] || [ -L "$backup" ]; then
+        backup="${target}.backup.$(date +%Y%m%d-%H%M%S)"
+    fi
+
+    echo "Backing up: $target -> $backup"
+    mv "$target" "$backup"
 }
 
 link_config() {
@@ -50,7 +65,9 @@ install_shared() {
     echo
     echo "Installing shared applications..."
 
-    link_config "$DOTFILES/apps/nvim" "$CONFIG/nvim"
+    # nvim: the live ~/.config/nvim is the source of truth (it has its own git
+    # repo). Do NOT symlink it here -- dotfiles/apps/nvim is kept in sync from
+    # it by hand. Symlinking would move the live config aside and replace it.
     link_config "$DOTFILES/apps/polybar" "$CONFIG/polybar"
     link_config "$DOTFILES/apps/rofi" "$CONFIG/rofi"
     link_config "$DOTFILES/apps/picom/picom.conf" "$CONFIG/picom/picom.conf"
