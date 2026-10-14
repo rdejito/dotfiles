@@ -55,6 +55,7 @@ install_shared() {
     link_config "$DOTFILES/apps/rofi" "$CONFIG/rofi"
     link_config "$DOTFILES/apps/picom/picom.conf" "$CONFIG/picom/picom.conf"
     link_config "$DOTFILES/apps/ghostty/config" "$CONFIG/ghostty/config"
+    link_config "$DOTFILES/apps/tmux/tmux.conf" "$CONFIG/tmux/tmux.conf"
     link_config "$DOTFILES/apps/pipewire/pipewire-pulse.conf.d" "$CONFIG/pipewire/pipewire-pulse.conf.d"
 }
 

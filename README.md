@@ -5,8 +5,10 @@ My personal Linux desktop configuration, focused on a clean, customizable, and r
 The repository is designed to support **multiple window managers** without mixing their configurations together. WM-specific configurations live under `wm/`, while shared applications and utilities live under `apps/`.
 
 > **Current WM:** i3
-> **Current shared tools:** Polybar, Rofi, Picom, Ghostty
+> **Current shared tools:** Polybar, Rofi, Picom, Ghostty, tmux
 > **Shell:** Zsh
+>
+> See [`docs/TERMINAL.md`](docs/TERMINAL.md) for the terminal/tmux/Neovim reference.
 
 ---
 
@@ -49,9 +51,15 @@ dotfiles/
 │   │   ├── config.rasi
 │   │   └── cyberpunk-red.rasi
 │   │
+│   ├── tmux/
+│   │   └── tmux.conf
+│   │
 │   └── zsh/
 │       ├── .zshrc
 │       └── .zshenv
+│
+├── docs/
+│   └── TERMINAL.md
 │
 ├── wm/
 │   └── i3/
@@ -100,6 +108,7 @@ dotfiles/
 * Rofi launcher and custom themes
 * Picom configuration
 * Ghostty terminal configuration
+* tmux configuration (prefix `Ctrl-a`, vi copy-mode, truecolor, one session per terminal)
 * Zsh configuration (Oh My Zsh; `~/.zshrc` and `~/.zshenv` linked from `apps/zsh/`)
 * Bluetooth audio auto-switching (PipeWire)
 * Custom shell scripts
@@ -142,7 +151,7 @@ The key tools used across the configuration:
 * **Rofi** — launcher, Wi-Fi/Bluetooth menus, calendar popup
 * **NetworkManager** (`nmcli`) and **BlueZ** (`bluetoothctl`), plus `rfkill`
 * **PipeWire** — Bluetooth audio auto-switching
-* **Ghostty** (terminal) and **playerctl** (music module)
+* **Ghostty** (terminal), **tmux** (multiplexer) and **playerctl** (music module)
 * Extras referenced in the i3 config: `flameshot`, `htop`, `nm-applet`
 
 ---
@@ -334,6 +343,7 @@ You may need to modify the configurations to match your own system.
 * [x] Rofi configuration
 * [x] Picom configuration
 * [x] Ghostty configuration
+* [x] tmux configuration
 * [x] Zsh configuration
 * [x] Symlink-based installation
 * [x] Backup existing configurations
