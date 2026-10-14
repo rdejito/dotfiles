@@ -43,11 +43,15 @@ dotfiles/
 │   │       ├── updates.sh
 │   │       └── wifi-menu.sh
 │   │
-│   └── rofi/
-│       ├── anime.rasi
-│       ├── calendar.rasi
-│       ├── config.rasi
-│       └── cyberpunk-red.rasi
+│   ├── rofi/
+│   │   ├── anime.rasi
+│   │   ├── calendar.rasi
+│   │   ├── config.rasi
+│   │   └── cyberpunk-red.rasi
+│   │
+│   └── zsh/
+│       ├── .zshrc
+│       └── .zshenv
 │
 ├── wm/
 │   └── i3/
@@ -70,6 +74,7 @@ dotfiles/
 | `wm/`                   | Window-manager-specific configurations |
 | `apps/`                 | Shared application configurations      |
 | `apps/polybar/scripts/` | Custom Polybar modules/scripts         |
+| `apps/zsh/`             | Zsh configuration (linked to `~/.zshrc` / `~/.zshenv`) |
 | `wallpapers/`           | Wallpaper assets (linked to `~/.config/wallpapers`) |
 | `install.sh`            | Installation and symlink management    |
 | `README.md`             | Documentation                          |
@@ -95,6 +100,7 @@ dotfiles/
 * Rofi launcher and custom themes
 * Picom configuration
 * Ghostty terminal configuration
+* Zsh configuration (Oh My Zsh; `~/.zshrc` and `~/.zshenv` linked from `apps/zsh/`)
 * Bluetooth audio auto-switching (PipeWire)
 * Custom shell scripts
 * Symlink-based configuration management
@@ -328,6 +334,7 @@ You may need to modify the configurations to match your own system.
 * [x] Rofi configuration
 * [x] Picom configuration
 * [x] Ghostty configuration
+* [x] Zsh configuration
 * [x] Symlink-based installation
 * [x] Backup existing configurations
 * [x] Clickable date/time calendar popup

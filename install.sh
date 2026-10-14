@@ -58,6 +58,15 @@ install_shared() {
     link_config "$DOTFILES/apps/pipewire/pipewire-pulse.conf.d" "$CONFIG/pipewire/pipewire-pulse.conf.d"
 }
 
+install_shell() {
+    echo
+    echo "Installing shell configuration..."
+
+    # zsh: these live directly in $HOME (not ~/.config), so link them there.
+    link_config "$DOTFILES/apps/zsh/.zshrc"  "$HOME/.zshrc"
+    link_config "$DOTFILES/apps/zsh/.zshenv" "$HOME/.zshenv"
+}
+
 install_i3() {
     echo
     echo "Installing i3 configuration..."
@@ -67,6 +76,7 @@ install_i3() {
     link_config "$DOTFILES/wallpapers" "$CONFIG/wallpapers"
 
     install_shared
+    install_shell
 }
 
 [ $# -eq 1 ] || usage
