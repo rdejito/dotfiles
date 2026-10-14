@@ -15,7 +15,15 @@ Personal cheat-sheet for the terminal stack on this machine.
 `$mod+Return` (i3) runs `i3-sensible-terminal`, which falls through to
 `x-terminal-emulator` → `/usr/bin/ghostty`. `$TERMINAL` is unset.
 
-tmux auto-starts from `~/.zshrc`, so each new terminal gets its own fresh session:
+tmux is **not** auto-started — a new terminal opens a plain interactive zsh.
+Start tmux yourself when you want it:
+
+```bash
+tmux              # attach to the latest session
+tmux new -s work  # new named session
+```
+
+To launch tmux in every terminal again, add this block back to `~/.zshrc`:
 
 ```zsh
 if [[ -o interactive && -z "$TMUX" && -z "$SSH_CONNECTION" && -z "$TMUX_NO_AUTO" ]]; then
@@ -23,11 +31,6 @@ if [[ -o interactive && -z "$TMUX" && -z "$SSH_CONNECTION" && -z "$TMUX_NO_AUTO"
 fi
 ```
 
-- Already inside tmux (`$TMUX` set) → no nesting.
-- `TMUX_NO_AUTO=1 zsh` (or any non-zsh shell) → plain shell, no tmux.
-- SSH sessions are skipped.
-
-To change the behaviour globally, edit that block in `~/.zshrc`.
 Alternative (ghostty-only): add `command = tmux new-session` to
 `~/dotfiles/apps/ghostty/config`.
 
@@ -146,7 +149,7 @@ Neovide-only: `Ctrl-=` / `Ctrl--` / `Ctrl-0` scale, `Ctrl-V` paste.
 
 | Keys                      | Action                          |
 | ------------------------- | ------------------------------- |
-| `Mod4+Enter`              | terminal (ghostty → tmux)       |
+| `Mod4+Enter`              | terminal (ghostty)              |
 | `Mod4+d`                  | rofi launcher                   |
 | `Mod4+q`                  | kill window                     |
 | `Mod4+f`                  | fullscreen toggle               |

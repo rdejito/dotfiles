@@ -119,10 +119,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # opencode
 export PATH=/home/kvy/.opencode/bin:$PATH
-
-# ---tmux auto-start---
-# Every local interactive shell starts its OWN new tmux session (never shared).
-# Skip when already inside tmux, over SSH, or when TMUX_NO_AUTO is set.
-if [[ -o interactive && -z "$TMUX" && -z "$SSH_CONNECTION" && -z "$TMUX_NO_AUTO" ]]; then
-    exec tmux new-session
-fi

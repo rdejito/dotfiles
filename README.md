@@ -108,7 +108,7 @@ dotfiles/
 * Rofi launcher and custom themes
 * Picom configuration
 * Ghostty terminal configuration
-* tmux configuration (prefix `Ctrl-a`, vi copy-mode, truecolor, one session per terminal)
+* tmux configuration (prefix `Ctrl-a`, vi copy-mode, truecolor; started manually, not on shell launch)
 * Zsh configuration (Oh My Zsh; `~/.zshrc` and `~/.zshenv` linked from `shell/`)
 * Bluetooth audio auto-switching (PipeWire)
 * Custom shell scripts
