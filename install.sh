@@ -64,8 +64,8 @@ install_shell() {
     echo "Installing shell configuration..."
 
     # zsh: these live directly in $HOME (not ~/.config), so link them there.
-    link_config "$DOTFILES/apps/zsh/.zshrc"  "$HOME/.zshrc"
-    link_config "$DOTFILES/apps/zsh/.zshenv" "$HOME/.zshenv"
+    link_config "$DOTFILES/shell/.zshrc"  "$HOME/.zshrc"
+    link_config "$DOTFILES/shell/.zshenv" "$HOME/.zshenv"
 }
 
 install_i3() {

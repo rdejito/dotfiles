@@ -51,12 +51,12 @@ dotfiles/
 │   │   ├── config.rasi
 │   │   └── cyberpunk-red.rasi
 │   │
-│   ├── tmux/
-│   │   └── tmux.conf
-│   │
-│   └── zsh/
-│       ├── .zshrc
-│       └── .zshenv
+│   └── tmux/
+│       └── tmux.conf
+│
+├── shell/
+│   ├── .zshrc
+│   └── .zshenv
 │
 ├── docs/
 │   └── TERMINAL.md
@@ -82,7 +82,7 @@ dotfiles/
 | `wm/`                   | Window-manager-specific configurations |
 | `apps/`                 | Shared application configurations      |
 | `apps/polybar/scripts/` | Custom Polybar modules/scripts         |
-| `apps/zsh/`             | Zsh configuration (linked to `~/.zshrc` / `~/.zshenv`) |
+| `shell/`                | Shell configuration (linked to `~/.zshrc` / `~/.zshenv`) |
 | `wallpapers/`           | Wallpaper assets (linked to `~/.config/wallpapers`) |
 | `install.sh`            | Installation and symlink management    |
 | `README.md`             | Documentation                          |
@@ -109,7 +109,7 @@ dotfiles/
 * Picom configuration
 * Ghostty terminal configuration
 * tmux configuration (prefix `Ctrl-a`, vi copy-mode, truecolor, one session per terminal)
-* Zsh configuration (Oh My Zsh; `~/.zshrc` and `~/.zshenv` linked from `apps/zsh/`)
+* Zsh configuration (Oh My Zsh; `~/.zshrc` and `~/.zshenv` linked from `shell/`)
 * Bluetooth audio auto-switching (PipeWire)
 * Custom shell scripts
 * Symlink-based configuration management
